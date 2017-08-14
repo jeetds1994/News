@@ -34,10 +34,13 @@ class App extends React.Component {
   render() {
     if (this.state.articles <= 0){return <p>Looking for articles...</p>}
     return (
-      <div className="App">
-        <div><DisplayArticles article_data={this.state.articles}/>
+    <div className="App">
+      <div className="slideshow-container">
+        <div id="mainContent">
+            <div><DisplayArticles article_data={this.state.articles}/></div>
         </div>
       </div>
+    </div>
     );
   }
 }
