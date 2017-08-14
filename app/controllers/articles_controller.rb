@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    Fetch_Handler.into2db()
-    render :index
+    @data = Fetch_Handler.into2db()
+    render json: @data
   end
 end
