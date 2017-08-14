@@ -6,10 +6,10 @@ const Article = (article_data) => {
       <div>
         <h1>Title: {article.title}</h1>
         <p>Section: {article.Section}</p>
+        <img src={article.image_url} width="25%" height="25%"/>
         <p>URL: {article.url}</p>
       </div>
     )
 }
-
 
 export default Article
