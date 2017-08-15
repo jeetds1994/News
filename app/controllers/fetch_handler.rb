@@ -11,7 +11,7 @@ class Fetch_Handler < ApplicationController
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     uri.query = URI.encode_www_form({
-    "api-key" => "eb0f0bd3196e4e6da0fe6bb9c6b667f3"
+    "api-key" => ""
   })
     request = Net::HTTP::Get.new(uri.request_uri)
     @result = JSON.parse(http.request(request).body)
