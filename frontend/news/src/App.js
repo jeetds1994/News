@@ -12,7 +12,6 @@ class App extends React.Component {
     this.state = {
       articles: [],
     }
-    this.handleData = this.handleData.bind(this)
   }
 
   fetchArticles(){
