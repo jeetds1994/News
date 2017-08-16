@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string :image_url
       t.string :date
       t.integer :topic_id
+      t.string :summary
       t.timestamps
     end
   end

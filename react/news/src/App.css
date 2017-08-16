@@ -22,3 +22,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+img{
+  display: block;
+  height: 700px;
+  max-width: auto;
+  margin: auto;
+}
+.slick-dots{
+  position: sticky;
+}

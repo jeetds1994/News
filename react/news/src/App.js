@@ -4,10 +4,15 @@ import './App.css';
 import SimpleSlider from './simpleSlider'
 
 class App extends Component {
+
+handleClick(){
+  debugger
+}
+
 render() {
     return (
       <div className="App">
-        <SimpleSlider />
+          <SimpleSlider />
       </div>
     );
   }

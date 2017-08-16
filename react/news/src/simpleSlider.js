@@ -13,31 +13,45 @@ class SimpleSlider extends React.Component {
     super()
 
     this.state = {
-      articles: []
+      articles: [],
+      summary: ''
     }
+    this.handleImgClick = this.handleImgClick.bind(this)
   }
 
-  fetchHandler(){
-    return fetch('http://localhost:3000/articles').then(response => response.json())
+  fetchHandler(url){
+    return fetch(url).then(response => response.json())
   }
 
   componentDidMount(){
-    this.fetchHandler().then(data => {console.log(data);return data}).then(data => this.setState({articles:data}))
+    this.fetchHandler('http://localhost:3000/articles').then(data => {console.log(data);return data}).then(data => this.setState({articles:data}))
   }
 
+  handleImgClick(){
+    var article_url = document.querySelector('.slick-active img').id
+    
+  }
 
   render() {
     let slideElements
     if (this.state.articles.length > 0) {
-      slideElements = this.state.articles.map( (article,i) => <div key={i}><p>{article.name}</p><img src={article.image_url}/></div> )
-    } else {
+      slideElements = this.state.articles.map( (article,i) =>
+      <div key={i} className="container">
+        <h1>{article.name}</h1>
+        <img src={article.image_url} onClick={this.handleImgClick} id={article.url}/>
+        <div className="overlay">
+          <div className="text">{article.summary}</div>
+        </div>
+      </div>
+    )} else {
       slideElements = <div></div>
     }
-
    return (
+     <div>
       <Slider {...settings}>
         {slideElements}
       </Slider>
+    </div>
     );
   }
 }
